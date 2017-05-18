@@ -89,9 +89,6 @@ module Sepa
         return if bank == :op && %i(download_file download_file_list).include?(command)
 
         valid = !(%i(
-          download_file
-          download_file_list
-          upload_file
         ).include? command)
       end
 
