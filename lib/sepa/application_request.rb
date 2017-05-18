@@ -59,6 +59,8 @@ module Sepa
       # @param value [#to_s] the value which is going to be set to the node
       def set_node(node, value)
         @application_request.at_css(node).content = value
+        put @application_request
+        @application_request
       end
 
       # Sets node to base64 encoded value
