@@ -253,7 +253,7 @@ module Sepa
           get_service_certificates
         ).include? @command
 
-        # signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
+        signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         digest = calculate_digest
         add_node_to_root(signature_node)
         add_value_to_signature('DigestValue', digest)
