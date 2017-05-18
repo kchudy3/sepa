@@ -33,7 +33,8 @@ module Sepa
       set_common_nodes
       set_nodes_contents
       process_signature
-      @application_request.to_xml
+      puts @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
+      @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
     end
 
     # Base64 encodes the whole application request
