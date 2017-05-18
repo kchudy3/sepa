@@ -4,6 +4,9 @@
   <Command></Command>
   <Timestamp></Timestamp>
   <Environment></Environment>
+  <Encryption/>
+  <Compression/>
+  <CompressionMethod/>
   <SoftwareId></SoftwareId>
   <FileType></FileType>
   <Content></Content>

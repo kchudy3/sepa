@@ -4,6 +4,9 @@
   <Command/>
   <Timestamp/>
   <Environment/>
+  <Encryption/>
+  <Compression/>
+  <CompressionMethod/>
   <SoftwareId/>
   <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
     <dsig:SignedInfo>
