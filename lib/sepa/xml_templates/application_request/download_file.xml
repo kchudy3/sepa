@@ -3,6 +3,8 @@
   <CustomerId/>
   <Command/>
   <Timestamp/>
+  <StartDate/>
+  <EndDate/>
   <Environment/>
   <FileReferences>
     <FileReference/>
@@ -11,6 +13,7 @@
   <Compression/>
   <CompressionMethod/>
   <SoftwareId/>
+  <Content xsi:nil="true"/>
   <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
     <dsig:SignedInfo>
       <dsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
