@@ -123,7 +123,7 @@ module Sepa
         add_encrypted_generic_request_to_soap(encrypted_request)
 
         process_header
-        add_body_to_header
+        add_body_to_header.gsub("mod:", "").gsub(":mod", "")
       end
 
       # Builds Danske Bank's create certificate request soap. Environment is set to `:customertest`
