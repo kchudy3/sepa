@@ -147,7 +147,7 @@ module Sepa
       #
       # @return [Nokogiri::XML] the soap with added body as a nokogiri document
       def add_body_to_header
-        body = @template.at_css('env|Body')
+        body = @template.at_css('soap|Body')
         @header_template.root.add_child(body)
         @header_template
       end
@@ -215,7 +215,7 @@ module Sepa
       end
 
       def set_application_request
-        set_node @template, 'bxd|ApplicationRequest', @application_request.to_base64
+        set_node @template, 'ApplicationRequest', @application_request.to_base64
       end
   end
 end
