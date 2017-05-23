@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
               xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
               xmlns:cor="http://bxd.fi/CorporateFileService" xmlns:bxd="http://model.bxd.fi">
-  <env:Body
+  <soap:Body
           xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
           wsu:Id="">
     <cor:downloadFileListin xmlns:cor="http://bxd.fi/CorporateFileService">
@@ -16,5 +16,5 @@
       </bxd:RequestHeader>
       <bxd:ApplicationRequest xmlns:bxd="http://model.bxd.fi"></bxd:ApplicationRequest>
     </cor:downloadFileListin>
-  </env:Body>
-</env:Envelope>
+  </soap:Body>
+</soap:Envelope>
