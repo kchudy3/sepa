@@ -178,7 +178,7 @@ module Sepa
 
         body_id = set_node_id(@template, ENVELOPE, 'Body', 1)
 
-        body_digest = calculate_digest(@template, 'env|Body')
+        body_digest = calculate_digest(@template, 'soap|Body')
         dsig = "dsig|Reference[URI='##{body_id}'] dsig|DigestValue"
         set_node(@header_template, dsig, body_digest)
 
