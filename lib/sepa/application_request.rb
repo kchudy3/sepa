@@ -265,7 +265,7 @@ module Sepa
         @application_request = Nokogiri::XML @application_request.to_xml
 
         puts "Right after the remove node: #{@application_request}"
-        puts "To S: #{application_request.to_s}"
+        puts "To S: #{@application_request.to_s}"
         @application_request = Nokogiri::XML @application_request.to_s.gsub(/\n\s+\n/, "\n")
         puts "Regexing #{@application_request}"
         digest = calculate_digest
