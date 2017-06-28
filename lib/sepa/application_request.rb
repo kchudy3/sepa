@@ -33,7 +33,6 @@ module Sepa
       set_common_nodes
       set_nodes_contents
       process_signature
-      puts "Application Request: #{@application_request}"
       puts @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
       @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
     end
@@ -256,14 +255,11 @@ module Sepa
           get_service_certificates
         ).include? @command
 
-        puts "Right before the remove node: #{@application_request}"
         #signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         
         signature_node = @application_request.at_css("xmlns|Signature", 'xmlns' => "http://www.w3.org/2000/09/xmldsig#").remove
         @application_request = Nokogiri::XML @application_request.to_xml
 
-        puts "Right after the remove node: #{@application_request}"
-        puts "To S: #{@application_request.to_s}"
         @application_request = Nokogiri::XML @application_request.to_s.gsub(/\n\s+\n/, "\n")
         puts "Regexing #{@application_request}"
         digest = calculate_digest
