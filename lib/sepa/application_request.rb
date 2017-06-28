@@ -203,7 +203,6 @@ module Sepa
           node = Nokogiri::XML::Node.new node, @application_request
         end
 
-        node = node.noblanks
         @application_request.root.add_child node
 
         set_node(node.name, content) if content
