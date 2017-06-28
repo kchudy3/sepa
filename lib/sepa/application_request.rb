@@ -22,6 +22,8 @@ module Sepa
       end
 
       @application_request = load_body_template(AR_TEMPLATE_PATH)
+
+      puts "APP REQUEST ON INITIALIZE: #{@application_request}"
     end
 
     # Sets the nodes in the application request, processes signature and then returns the
