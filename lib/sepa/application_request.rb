@@ -265,8 +265,9 @@ module Sepa
         @application_request = Nokogiri::XML @application_request.to_xml
 
         puts "Right after the remove node: #{@application_request}"
-        puts "To XML: #{@application_request.to_xml}"
-        puts "To HTML: #{@application_request.to_html}"
+        puts "To S: #{application_request.to_s}"
+        @application_request = Nokogiri::XML @application_request.to_s.gsub(/\n\s+\n/, "\n")
+        puts "Regexing #{@application_request}"
         digest = calculate_digest
         add_node_to_root(signature_node)
         puts "Digest Value: #{digest}"
