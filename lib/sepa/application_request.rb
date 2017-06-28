@@ -254,12 +254,14 @@ module Sepa
         ).include? @command
 
         signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
+        add_node_to_root(signature_node)
         digest = calculate_digest
+        signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         add_node_to_root(signature_node)
         puts "Digest Value: #{digest}"
         add_value_to_signature('DigestValue', digest)
-        puts "Signature Value: #{calculate_signature}"
-        add_value_to_signature('SignatureValue', calculate_signature)
+        puts "Signature Value: #{calculate_signature.gsub!("\n", "")}"
+        add_value_to_signature('SignatureValue', calculate_signature.gsub!("\n", ""))
         add_value_to_signature('X509Certificate', format_cert(@own_signing_certificate))
       end
 
