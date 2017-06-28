@@ -1,15 +1,14 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-16"?>
 <ApplicationRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://bxd.fi/xmldata/">
   <CustomerId/>
-  <Command/>
   <Timestamp/>
   <StartDate/>
   <EndDate/>
   <Environment/>
-  <Encryption/>
-  <Compression/>
-  <CompressionMethod/>
-  <SoftwareId/>
+  <Encryption>true</Encryption>
+  <Compression>true</Compression>
+  <CompressionMethod>gzip</CompressionMethod>
+  <SoftwareId>DBWS - BB4816</SoftwareId>
   <Content xsi:nil="true"/>
   <dsig:Signature xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
     <dsig:SignedInfo>
