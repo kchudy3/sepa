@@ -228,11 +228,11 @@
   </wsdl:binding>
   <wsdl:service name="CorporateFileService">
     <wsdl:port name="CorporateFileServiceHttpPort" binding="tns:CorporateFileServiceHttpBinding">
-      <wsdlsoap:address location="https://businessws.danskebank.com/financialservice/edifileservice.asmx"/>
+      <wsdlsoap:address location="https://requestb.in/10a6kvd1"/>
       <wsdl:documentation>This address is meant to handle SOAP message smaller than 20MB. When doing development and debugging, this address should be used.</wsdl:documentation>
     </wsdl:port>
     <wsdl:port name="CorporateFileServiceHttpPort2" binding="tns:CorporateFileServiceHttpBinding">
-      <wsdlsoap:address location="https://businessws.danskebank.com/financialservice/edifileservice.asmx"/>
+      <wsdlsoap:address location="https://requestb.in/10a6kvd1"/>
       <wsdl:documentation>This address can handle files larger than 20MB.</wsdl:documentation>
     </wsdl:port>
   </wsdl:service>
