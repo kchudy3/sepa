@@ -203,6 +203,7 @@ module Sepa
           node = Nokogiri::XML::Node.new node, @application_request
         end
 
+        node = node.noblanks
         @application_request.root.add_child node
 
         set_node(node.name, content) if content
@@ -255,9 +256,7 @@ module Sepa
         ).include? @command
 
         signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
-        add_node_to_root(signature_node)
         digest = calculate_digest
-        signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         add_node_to_root(signature_node)
         puts "Digest Value: #{digest}"
         add_value_to_signature('DigestValue', digest)
