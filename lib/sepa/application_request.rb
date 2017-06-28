@@ -183,7 +183,7 @@ module Sepa
         set_node("Encryption", "true")
         set_node("Compression", "true")
         set_node("CompressionMethod", "gzip")
-        set_node("SoftwareId", "Sepa Transfer Library version #{VERSION}")
+        set_node("SoftwareId", "DBWS - BB4816"#"Sepa Transfer Library version #{VERSION}")
         set_node("Command", pretty_command) unless @command == :renew_certificate || @command == :download_file || @command == :download_file_list || @command == :upload_file
       end
 
@@ -255,8 +255,10 @@ module Sepa
 
         signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         digest = calculate_digest
-        add_node_to_root(signature_node)
+        # add_node_to_root(signature_node)
+        puts "Digest Value: #{digest}"
         add_value_to_signature('DigestValue', digest)
+        puts "Signature Value: #{calculate_signature}"
         add_value_to_signature('SignatureValue', calculate_signature)
         add_value_to_signature('X509Certificate', format_cert(@own_signing_certificate))
       end
