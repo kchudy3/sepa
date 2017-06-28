@@ -33,6 +33,7 @@ module Sepa
       set_common_nodes
       set_nodes_contents
       process_signature
+      puts "Application Request: #{@application_request}"
       puts @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
       @application_request.to_xml.gsub("dsig:", "").gsub(":dsig", "")
     end
@@ -117,7 +118,7 @@ module Sepa
       # Sets nodes' contents for download file list request
       def set_download_file_list_nodes
         add_node_after('Environment', 'TargetId', content: @target_id) if @bank == :nordea
-        add_node_after('Timestamp', 'Status', content: @status) if @status.present?
+        # add_node_after('Timestamp', 'Status', content: @status) if @status.present?
         add_node_to_root 'FileType', content: @file_type if @file_type.present?
       end
 
