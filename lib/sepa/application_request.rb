@@ -22,8 +22,6 @@ module Sepa
       end
 
       @application_request = load_body_template(AR_TEMPLATE_PATH)
-
-      puts "APP REQUEST ON INITIALIZE: #{@application_request}"
     end
 
     # Sets the nodes in the application request, processes signature and then returns the
@@ -180,9 +178,9 @@ module Sepa
 
         set_node('Environment', @environment.to_s.upcase)
         set_node("CustomerId", @customer_id)
-        set_node("Timestamp", iso_time)
-        set_node("StartDate", Time.now.strftime("%F"))
-        set_node("EndDate", Time.now.strftime("%F"))
+        set_node("Timestamp", "2017-06-28T15:02:22.9759086+02:00")
+        set_node("StartDate", "2017-06-28")
+        set_node("EndDate", "2017-06-28")
         set_node("Encryption", "true")
         set_node("Compression", "true")
         set_node("CompressionMethod", "gzip")
