@@ -262,7 +262,8 @@ module Sepa
         #signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
         
         signature_node = @application_request.at_css("xmlns|Signature", 'xmlns' => "http://www.w3.org/2000/09/xmldsig#").remove
-        @application_request = Nokogiri::XML.parse @application_request.to_xml
+        @application_request = Nokogiri::XML @application_request.to_xml
+
         puts "Right after the remove node: #{@application_request}"
         puts "To XML: #{@application_request.to_xml}"
         puts "To HTML: #{@application_request.to_html}"
