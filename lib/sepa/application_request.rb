@@ -183,7 +183,7 @@ module Sepa
         set_node("Encryption", "true")
         set_node("Compression", "true")
         set_node("CompressionMethod", "gzip")
-        set_node("SoftwareId", "DBWS - BB4816"#"Sepa Transfer Library version #{VERSION}")
+        set_node("SoftwareId", "DBWS - BB4816")#"Sepa Transfer Library version #{VERSION}")
         set_node("Command", pretty_command) unless @command == :renew_certificate || @command == :download_file || @command == :download_file_list || @command == :upload_file
       end
 
