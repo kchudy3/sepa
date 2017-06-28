@@ -191,7 +191,7 @@ module Sepa
 
       # Generates a random token id and sets it to correct node
       def set_token_id
-        security_token_id = "token-#{SecureRandom.uuid}"
+        security_token_id = "SecurityToken-#{SecureRandom.uuid}"
 
         @header_template.at('wsse|BinarySecurityToken')['wsu:Id'] = security_token_id
         @header_template.at('wsse|Reference')['URI'] = "##{security_token_id}"

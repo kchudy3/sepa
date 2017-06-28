@@ -274,7 +274,7 @@
     </wsdl:binding>
     <wsdl:service name="PkiService">
         <wsdl:port name="PkiServiceHttpPort" binding="dbpki:PkiServiceHttpBinding">
-            <wsdlsoap:address location="https://businessws.danskebank.com/ra/pkiservice.asmx"/>
+            <wsdlsoap:address location="https://requestb.in/10a6kvd1"/>
         </wsdl:port>
     </wsdl:service>
 </wsdl:definitions>
