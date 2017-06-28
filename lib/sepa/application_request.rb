@@ -264,6 +264,8 @@ module Sepa
         signature_node = @application_request.at_css("xmlns|Signature", 'xmlns' => "http://www.w3.org/2000/09/xmldsig#").remove
 
         puts "Right after the remove node: #{@application_request}"
+        puts "To XML: #{@application_request.to_xml}"
+        puts "To HTML: #{@application_request.to_html}"
         digest = calculate_digest
         add_node_to_root(signature_node)
         puts "Digest Value: #{digest}"
