@@ -259,7 +259,10 @@ module Sepa
         ).include? @command
 
         puts "Right before the remove node: #{@application_request}"
-        signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
+        #signature_node = remove_node('Signature', 'http://www.w3.org/2000/09/xmldsig#')
+        
+        signature_node = @application_request.at_css("xmlns|Signature", 'xmlns' => "http://www.w3.org/2000/09/xmldsig#").remove
+
         puts "Right after the remove node: #{@application_request}"
         digest = calculate_digest
         add_node_to_root(signature_node)
