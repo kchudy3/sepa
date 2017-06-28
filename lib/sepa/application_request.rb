@@ -217,6 +217,7 @@ module Sepa
       # @return [String] the base64 encoded digest of the {#application_request}
       def calculate_digest
         sha1 = OpenSSL::Digest::SHA1.new
+        puts "Inside of calculate digest, application request at this time: #{@application_request}"
         encode(sha1.digest(@application_request.canonicalize(canonicalization_mode)))
       end
 
@@ -240,6 +241,7 @@ module Sepa
         sha1 = OpenSSL::Digest::SHA1.new
         dsig = 'http://www.w3.org/2000/09/xmldsig#'
         node = @application_request.at_css("dsig|SignedInfo", 'dsig' => dsig)
+        puts "At time of signature calculation here is the value of application req: #{@application_request}"
         signature = @signing_private_key.sign(sha1, node.canonicalize(canonicalization_mode))
         encode signature
       end
